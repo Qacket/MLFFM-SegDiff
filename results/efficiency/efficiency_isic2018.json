@@ -1,0 +1,177 @@
+{
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.0.1+cu117",
+    "cudnn_enabled": false,
+    "device": "cuda",
+    "gpu": "NVIDIA RTX A6000",
+    "cuda": "11.7"
+  },
+  "records": [
+    {
+      "config": "configs/server/isic2018/paper/dermosegdiff.yaml",
+      "model": "DermoSegDiff",
+      "task": "diffusion",
+      "cudnn_enabled": false,
+      "dataset": "isic2018",
+      "input_size": 128,
+      "parameters": {
+        "total": 321181377,
+        "trainable": 321181377,
+        "buffers": 0
+      },
+      "forward_gflops": null,
+      "forward_gmacs": null,
+      "inference_forward_passes_per_image": 1250,
+      "inference_gflops_per_image": null,
+      "training": {
+        "batch_size": 32,
+        "ema": true,
+        "seconds_per_iteration": 2.514694109559059,
+        "peak_memory_gb": 38.14123868942261,
+        "epochs": 250,
+        "train_images_per_fold": 2075,
+        "iterations_per_epoch": 65,
+        "estimated_hours_per_fold": 11.351049800092975
+      },
+      "inference": {
+        "latency_seconds_batch1": 75.55644413456321,
+        "test_batch_size": 32,
+        "amortized_seconds_per_image": 30.221590404835297,
+        "peak_memory_gb_test_batch": 7.19008207321167
+      }
+    },
+    {
+      "config": "configs/server/isic2018/paper/generic_unet.yaml",
+      "model": "Generic_UNet",
+      "task": "seg",
+      "cudnn_enabled": false,
+      "dataset": "isic2018",
+      "input_size": 128,
+      "parameters": {
+        "total": 5353696,
+        "trainable": 5353696,
+        "buffers": 4882
+      },
+      "forward_gflops": null,
+      "forward_gmacs": null,
+      "inference_forward_passes_per_image": 1,
+      "inference_gflops_per_image": null,
+      "training": {
+        "batch_size": 32,
+        "ema": false,
+        "seconds_per_iteration": 0.11791431531310081,
+        "peak_memory_gb": 1.4303278923034668,
+        "epochs": 250,
+        "train_images_per_fold": 2075,
+        "iterations_per_epoch": 65,
+        "estimated_hours_per_fold": 0.5322521177327467
+      },
+      "inference": {
+        "latency_seconds_batch1": 0.003354491665959358,
+        "test_batch_size": 32,
+        "amortized_seconds_per_image": 0.0011552537907846272,
+        "peak_memory_gb_test_batch": 0.49291181564331055
+      }
+    },
+    {
+      "config": "configs/server/isic2018/paper/mlffm.yaml",
+      "model": "MLFFMSegDiff",
+      "task": "diffusion",
+      "cudnn_enabled": false,
+      "dataset": "isic2018",
+      "input_size": 128,
+      "parameters": {
+        "total": 322356749,
+        "trainable": 322356749,
+        "buffers": 19609
+      },
+      "forward_gflops": null,
+      "forward_gmacs": null,
+      "inference_forward_passes_per_image": 1250,
+      "inference_gflops_per_image": null,
+      "training": {
+        "batch_size": 32,
+        "ema": true,
+        "seconds_per_iteration": 2.80337806744501,
+        "peak_memory_gb": 42.93040704727173,
+        "epochs": 500,
+        "train_images_per_fold": 2075,
+        "iterations_per_epoch": 65,
+        "estimated_hours_per_fold": 25.308274219989674
+      },
+      "inference": {
+        "latency_seconds_batch1": 84.44672675803304,
+        "test_batch_size": 32,
+        "amortized_seconds_per_image": 33.184673065989045,
+        "peak_memory_gb_test_batch": 7.199151039123535
+      }
+    },
+    {
+      "config": "configs/server/isic2018/paper/swinunetr.yaml",
+      "model": "SwinUNETR",
+      "task": "seg",
+      "cudnn_enabled": false,
+      "dataset": "isic2018",
+      "input_size": 128,
+      "parameters": {
+        "total": 7930651,
+        "trainable": 7930651,
+        "buffers": 19208
+      },
+      "forward_gflops": null,
+      "forward_gmacs": null,
+      "inference_forward_passes_per_image": 1,
+      "inference_gflops_per_image": null,
+      "training": {
+        "batch_size": 32,
+        "ema": false,
+        "seconds_per_iteration": 0.2384249037131667,
+        "peak_memory_gb": 3.100217819213867,
+        "epochs": 10,
+        "train_images_per_fold": 2075,
+        "iterations_per_epoch": 65,
+        "estimated_hours_per_fold": 0.04304894094821066
+      },
+      "inference": {
+        "latency_seconds_batch1": 0.014337918255478144,
+        "test_batch_size": 32,
+        "amortized_seconds_per_image": 0.002204044401878491,
+        "peak_memory_gb_test_batch": 0.4362335205078125
+      }
+    },
+    {
+      "config": "configs/server/isic2018/paper/unet.yaml",
+      "model": "UNet",
+      "task": "seg",
+      "cudnn_enabled": false,
+      "dataset": "isic2018",
+      "input_size": 128,
+      "parameters": {
+        "total": 31037633,
+        "trainable": 31037633,
+        "buffers": 11794
+      },
+      "forward_gflops": null,
+      "forward_gmacs": null,
+      "inference_forward_passes_per_image": 1,
+      "inference_gflops_per_image": null,
+      "training": {
+        "batch_size": 32,
+        "ema": false,
+        "seconds_per_iteration": 0.2806470077484846,
+        "peak_memory_gb": 3.1776123046875,
+        "epochs": 10,
+        "train_images_per_fold": 2075,
+        "iterations_per_epoch": 65,
+        "estimated_hours_per_fold": 0.050672376399031945
+      },
+      "inference": {
+        "latency_seconds_batch1": 0.0029126624576747417,
+        "test_batch_size": 32,
+        "amortized_seconds_per_image": 0.002637897603563033,
+        "peak_memory_gb_test_batch": 1.025681495666504
+      }
+    }
+  ]
+}

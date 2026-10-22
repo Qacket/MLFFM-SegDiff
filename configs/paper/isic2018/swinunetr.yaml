@@ -1,0 +1,182 @@
+# ISIC2018 / SwinUNETR: configuration of the original experiment (Tables 4 and 6 of the paper),
+# taken from the configuration printed in its test log (swinunetr_i01_f1_seg_test.log); only the data and output
+# paths were changed. Table 4 used, for every fold, the checkpoint with the lowest loss on the
+# held-out fold (swinunetr_i01_f{fold}_best.pth); see README.md.
+run:
+  device: cuda
+  writer_dir: outputs/paper/isic2018/swinunetr/runs
+  continue_training: false
+  task: seg
+  kfold:
+    enabled: true
+    n_splits: 5
+    shuffle: true
+    seed: 0
+    metrics_dir: outputs/paper/isic2018/swinunetr/metrics
+    config_dir: outputs/paper/isic2018/swinunetr/configs
+  log_dir: outputs/paper/isic2018/swinunetr/logs
+model:
+  save_dir: outputs/paper/isic2018/swinunetr/models
+  name: swinunetr_i01
+  class: SwinUNETR
+  params:
+    img_size:
+    - 128
+    - 128
+    in_channels: 3
+    out_channels: 1
+    depths:
+    - 2
+    - 2
+    - 2
+    - 2
+    num_heads:
+    - 3
+    - 6
+    - 12
+    - 24
+    feature_size: 24
+    norm_name: instance
+    drop_rate: 0.0
+    attn_drop_rate: 0.0
+    dropout_path_rate: 0.0
+    normalize: true
+    use_checkpoint: false
+    spatial_dims: 2
+dataset:
+  input_size: 128
+  name: isic2018
+  class_name: ISIC2018DatasetFast
+  data_dir: data/ISIC2018
+  number_classes: 2
+  img_channels: 3
+  msk_channels: 1
+data_loader:
+  train:
+    batch_size: 32
+    shuffle: true
+    pin_memory: true
+  validation:
+    batch_size: 32
+    shuffle: false
+    pin_memory: true
+  test:
+    batch_size: 32
+    shuffle: false
+    pin_memory: false
+training:
+  epochs: 10
+  loss:
+    bce:
+      coefficient: 1.0
+    dice:
+      coefficient: 1.0
+  optimizer:
+    name: Adam
+    params:
+      lr: 0.0001
+      betas:
+      - 0.9
+      - 0.999
+      weight_decay: 0.0
+  scheduler:
+    factor: 0.5
+    patience: 10
+testing:
+  model_weights:
+    overload: false
+    file_path: ''
+augmentation:
+  p: 0.5
+  levels:
+    pixel:
+      p: 1.0
+      transforms:
+        CLAHE:
+          clip_limit: 4
+          tile_grid_size:
+          - 3
+          - 3
+          p: 0.05
+        Emboss:
+          p: 0.05
+        GaussNoise:
+          var_limit:
+          - 10
+          - 200
+          p: 0.05
+        HueSaturationValue:
+          hue_shift_limit: 7
+          sat_shift_limit: 30
+          val_shift_limit: 20
+          p: 0.05
+        MultiplicativeNoise:
+          multiplier:
+          - 0.8
+          - 1.25
+          elementwise: true
+          p: 0.05
+        RGBShift:
+          p: 0.05
+        RandomBrightnessContrast:
+          p: 0.05
+        RandomGamma:
+          gamma_limit:
+          - 70
+          - 130
+          p: 0.05
+        RandomToneCurve:
+          scale: 0.15
+          p: 0.05
+        Sharpen:
+          p: 0.05
+        Spatter:
+          mean: 0
+          std: 60
+          gauss_sigma: 2
+          cutout_threshold: 5
+          intensity: -3
+          p: 0.05
+        UnsharpMask:
+          p: 0.05
+    spacial:
+      p: 1
+      transforms:
+        Affine:
+          p: 0.05
+        CoarseDropout:
+          min_holes: 1
+          max_holes: 5
+          min_height: 4
+          max_height: 16
+          min_width: 4
+          max_width: 16
+          fill_value:
+          - 10
+          - 20
+          - 60
+          p: 0.05
+        ElasticTransform:
+          alpha: 0.5
+          sigma: 1.3
+          alpha_affine: 20
+          border_mode: 2
+          p: 0.05
+        HorizontalFlip:
+          p: 0.05
+        VerticalFlip:
+          p: 0.05
+        Flip:
+          p: 0.05
+        GridDistortion:
+          border_mode: 4
+          p: 0.05
+        PiecewiseAffine:
+          p: 0.05
+        PixelDropout:
+          p: 0.05
+        RandomRotate90:
+          p: 0.05
+        Rotate:
+          border_mode: 4
+          p: 0.05

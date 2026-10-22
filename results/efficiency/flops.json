@@ -1,0 +1,140 @@
+{
+  "torch": "2.2.2",
+  "records": [
+    {
+      "dataset": "isic2018",
+      "model": "mlffm",
+      "class": "MLFFMSegDiff",
+      "parameters": 322356749,
+      "forward_gflops": 212.519665984,
+      "forwards_per_image": 1250,
+      "inference_gflops_per_image": 265649.58248
+    },
+    {
+      "dataset": "isic2018",
+      "model": "dermosegdiff",
+      "class": "DermoSegDiff",
+      "parameters": 321181377,
+      "forward_gflops": 209.511415808,
+      "forwards_per_image": 1250,
+      "inference_gflops_per_image": 261889.26976
+    },
+    {
+      "dataset": "isic2018",
+      "model": "unet",
+      "class": "UNet",
+      "parameters": 31037633,
+      "forward_gflops": 24.083693568,
+      "forwards_per_image": 1,
+      "inference_gflops_per_image": 24.083693568
+    },
+    {
+      "dataset": "isic2018",
+      "model": "swinunetr",
+      "class": "SwinUNETR",
+      "parameters": 7930651,
+      "forward_gflops": 4.012626816,
+      "forwards_per_image": 1,
+      "inference_gflops_per_image": 4.012626816
+    },
+    {
+      "dataset": "isic2018",
+      "model": "generic_unet",
+      "class": "Generic_UNet",
+      "parameters": 5353696,
+      "forward_gflops": 5.144772608,
+      "forwards_per_image": 1,
+      "inference_gflops_per_image": 5.144772608
+    },
+    {
+      "dataset": "ph2",
+      "model": "mlffm",
+      "class": "MLFFMSegDiff",
+      "parameters": 322356749,
+      "forward_gflops": 212.519665984,
+      "forwards_per_image": 1250,
+      "inference_gflops_per_image": 265649.58248
+    },
+    {
+      "dataset": "ph2",
+      "model": "dermosegdiff",
+      "class": "DermoSegDiff",
+      "parameters": 321181377,
+      "forward_gflops": 209.511415808,
+      "forwards_per_image": 1250,
+      "inference_gflops_per_image": 261889.26976
+    },
+    {
+      "dataset": "ph2",
+      "model": "unet",
+      "class": "UNet",
+      "parameters": 31037633,
+      "forward_gflops": 24.083693568,
+      "forwards_per_image": 1,
+      "inference_gflops_per_image": 24.083693568
+    },
+    {
+      "dataset": "ph2",
+      "model": "swinunetr",
+      "class": "SwinUNETR",
+      "parameters": 7930651,
+      "forward_gflops": 4.012626816,
+      "forwards_per_image": 1,
+      "inference_gflops_per_image": 4.012626816
+    },
+    {
+      "dataset": "ph2",
+      "model": "generic_unet",
+      "class": "Generic_UNet",
+      "parameters": 5353696,
+      "forward_gflops": 5.144772608,
+      "forwards_per_image": 1,
+      "inference_gflops_per_image": 5.144772608
+    },
+    {
+      "dataset": "ham10000",
+      "model": "mlffm",
+      "class": "MLFFMSegDiff",
+      "parameters": 158668429,
+      "forward_gflops": 298.876666176,
+      "forwards_per_image": 1250,
+      "inference_gflops_per_image": 373595.83272
+    },
+    {
+      "dataset": "ham10000",
+      "model": "dermosegdiff",
+      "class": "DermoSegDiff",
+      "parameters": 157749441,
+      "forward_gflops": 295.809220608,
+      "forwards_per_image": 250,
+      "inference_gflops_per_image": 73952.305152
+    },
+    {
+      "dataset": "ham10000",
+      "model": "unet",
+      "class": "UNet",
+      "parameters": 31037633,
+      "forward_gflops": 24.083693568,
+      "forwards_per_image": 1,
+      "inference_gflops_per_image": 24.083693568
+    },
+    {
+      "dataset": "ham10000",
+      "model": "swinunetr",
+      "class": "SwinUNETR",
+      "parameters": 7930651,
+      "forward_gflops": 4.012626816,
+      "forwards_per_image": 1,
+      "inference_gflops_per_image": 4.012626816
+    },
+    {
+      "dataset": "ham10000",
+      "model": "generic_unet",
+      "class": "Generic_UNet",
+      "parameters": 5353696,
+      "forward_gflops": 5.144772608,
+      "forwards_per_image": 1,
+      "inference_gflops_per_image": 5.144772608
+    }
+  ]
+}
